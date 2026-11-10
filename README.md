@@ -28,3 +28,30 @@ Chatmiro — do‘kon egasining o‘z ma’lumotlari asosida ishlaydigan AI sotu
 | 🛡 Admin panel | Platforma bo‘yicha barcha agentlarni yoqish/o‘chirish, statistika |
 
 ## Arxitektura
+
+```
+Instagram / Telegram / Sayt chati
+              │  webhook
+              ▼
+     Node.js (Express) server
+              │
+   ┌──────────┴────────────┐
+   │  Agent konveyeri       │
+   │  1. Bilim yig‘ish      │  ← mahsulotlar, FAQ, egasining matni
+   │  2. Gemini (o‘ylash)   │
+   │  3. Narx/va’da nazorati│
+   │  4. Sifat tekshiruvi   │
+   │  5. Lid / operator     │
+   └──────────┬────────────┘
+              ▼
+   Mijozga javob + egasiga Inbox
+```
+
+**Stek:** Node.js, Express, Google Gemini, Telegram Bot API, Instagram Graph API (Meta), PM2, Linux VPS.
+
+**Sifat:** 1 800 dan ortiq avtomatik test; deploy faqat barcha testlar o‘tganda serverga chiqadi va avval ma’lumotlar zaxirasi olinadi.
+
+## Asoschi
+
+**Nurmuhammad Tuxtasunov** — Namangan, O‘zbekiston
+✉️ info@chatmiro.com · 📞 +998 94 822 25 27
